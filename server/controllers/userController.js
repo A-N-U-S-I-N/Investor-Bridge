@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 exports.register = async (req, res) => {
   const { name, email, password, role, contact, company } = req.body;
   try {
-    if (!['user', 'business', 'investor', 'banker'].includes(role)) {
+    if (!['user', 'business', 'investor', 'banker', 'advisor'].includes(role)) {
       return res.status(400).json({ msg: 'Invalid role specified' });
     }
     

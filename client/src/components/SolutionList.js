@@ -23,6 +23,8 @@ const SolutionList = ({ queryId }) => {
     fetchSolutions();
   }, [queryId]);
 
+  const canPostSolutions = user && (user.role === 'advisor' || user.role === 'banker');
+
   return (
     <div className="mb-3">
       <h5 className="text-primary fw-bold mb-3">Solutions</h5>
@@ -37,13 +39,7 @@ const SolutionList = ({ queryId }) => {
           </div>
         </div>
       ))}
-      {user && (
-        <div>
-          <div>
-            <SolutionForm queryId={queryId} user={user} />
-          </div>
-        </div>
-      )}
+      {canPostSolutions && <SolutionForm queryId={queryId} user={user} />}
     </div>
   );
 };

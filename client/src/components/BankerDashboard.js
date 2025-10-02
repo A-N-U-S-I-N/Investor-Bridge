@@ -1,6 +1,7 @@
 import React from 'react';
 import LoanDetailsForm from './LoanDetailsForm';
 import QueryList from './QueryList';
+import LoanList from './LoanList';
 
 const sectionStyle = "card shadow mb-4";
 const sectionHeader = "card-header bg-primary text-light fw-bold";
@@ -23,6 +24,15 @@ const BankerDashboard = ({ user }) => {
           <LoanDetailsForm user={user} />
         </div>
       </div>
+
+      <div className={sectionStyle}>
+                <div className={sectionHeader}>
+                    <span className="fs-5"><i className="bi bi-bank2 me-2"></i>Available Loans</span>
+                </div>
+                <div className={sectionBody}>
+                    <LoanList />
+                </div>
+            </div>
 
       <div className={sectionStyle}>
         <div className={sectionHeader}>

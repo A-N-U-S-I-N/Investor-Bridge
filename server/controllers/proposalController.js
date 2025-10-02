@@ -18,9 +18,12 @@ exports.createProposal = async (req, res) => {
 
 exports.getProposals = async (req, res) => {
   try {
-    const proposals = await Proposal.find()
-      .populate('createdBy', 'name role')
-      .populate('category');
+    const type = req.query.type;
+  const filter = {};
+  if (type) {
+    filter.type = type;
+  }
+  const proposals = await Proposal.find(filter).populate('createdBy').populate('category');
     res.json(proposals);
   } catch (err) {
     res.status(500).json({ msg: err.message });

@@ -97,6 +97,7 @@ export default function Register({setUser}) {
             <option value="investor">Investor</option>
             <option value="business">Business Person</option>
             <option value="banker">Banker</option>
+            <option value="advisor">Advisor</option>
           </select>
         </div>
         <button className="btn btn-primary" type="submit">

@@ -1,34 +1,43 @@
 import React from 'react';
-import ProposalForm from './ProposalForm';
-import ProposalList from './ProposalList';
-import QueryForm from './QueryForm';
-import LoanList from './LoanList';
-import QueryList from './QueryList';
+import QueryList from './QueryList';       
+import InformationPostForm from './InformationPostForm'; 
 import InformationList from './InformationList';
+import ProposalList from './ProposalList';
+import LoanList from './LoanList';
 
-const sectionStyle = "card shadow mb-4";
+const sectionStyle = "card shadow mb-4 border-0";
 const sectionHeader = "card-header bg-primary text-light fw-bold";
 const sectionBody = "card-body bg-light";
 
-const BusinessDashboard = ({ user }) => {
+const AdvisorDashboard = ({ user }) => {
+
     return (
-        <div className="container mt-4">
-            <div className="mb-5 text-center">
-                <h1 className="display-4">Welcome, <span className="badge rounded-pill bg-primary align-middle">{user.name}</span></h1>
+        <div className="container mt-4" style={{ maxWidth: 950 }}>
+            <div className="mb-4 text-center">
+                <h1 className="display-5">
+                    Welcome, <span className="badge rounded-pill bg-primary">{user.name}</span>
+                </h1>
             </div>
 
             <div className={sectionStyle}>
                 <div className={sectionHeader}>
-                    <span className="fs-5"><i className="bi bi-lightbulb-fill me-2"></i>Post a Business Idea</span>
+                    <i className="bi bi-info-circle-fill me-2"></i>
+                    Post Information (Advice)
                 </div>
                 <div className={sectionBody}>
-                    <ProposalForm user={user} proposalType="business" />
+                    <InformationPostForm user={user} />
                 </div>
             </div>
 
             <div className={sectionStyle}>
+                <div className={sectionHeader}><i className="bi bi-info-circle-fill me-2"></i>Information & Tips</div>
+                <div className={sectionBody}><InformationList /></div>
+            </div>
+
+            <div className={sectionStyle}>
                 <div className={sectionHeader}>
-                    <span className="fs-5"><i className="bi bi-card-list me-2"></i>All Business Proposals</span>
+                    <i className="bi bi-lightbulb-fill me-2"></i>
+                    All Business Proposals
                 </div>
                 <div className={sectionBody}>
                     <ProposalList proposalType="business" />
@@ -55,30 +64,16 @@ const BusinessDashboard = ({ user }) => {
             </div>
 
             <div className={sectionStyle}>
-                <div className={sectionHeader}><i className="bi bi-info-circle-fill me-2"></i>Information & Tips</div>
-                <div className={sectionBody}><InformationList /></div>
-            </div>
-
-            <div className={sectionStyle}>
                 <div className={sectionHeader}>
-                    <span className="fs-5"><i className="bi bi-question-circle-fill me-2"></i>Post Queries</span>
+                    <i className="bi bi-list-task me-2"></i>
+                    All Queries & Solutions (Answer as Advisor)
                 </div>
                 <div className={sectionBody}>
-                    <QueryForm user={user} />
+                    <QueryList user={user} />
                 </div>
             </div>
-
-            <div className={sectionStyle}>
-                <div className={sectionHeader}>
-                    <span className="fs-5"><i className="bi bi-list-check me-2"></i>All Queries</span>
-                </div>
-                <div className={sectionBody}>
-                    <QueryList />
-                </div>
-            </div>
-
         </div>
     );
 };
 
-export default BusinessDashboard;
+export default AdvisorDashboard;

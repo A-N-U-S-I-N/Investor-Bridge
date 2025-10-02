@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const LoanDetailsForm = ({ user }) => {
   const [form, setForm] = useState({
+    bankName: '',
     loanAmount: '',
     interestRate: '',
     loanTerm: '',
@@ -22,7 +23,7 @@ const LoanDetailsForm = ({ user }) => {
         ...form,
         title: `Loan for ${user.name}`,
         description: form.description,
-        category: null, 
+        category: null,
         type: 'loan'
       }, {
         headers: { 'x-auth-token': token }
@@ -43,6 +44,18 @@ const LoanDetailsForm = ({ user }) => {
     <div className="card shadow-sm border-0 bg-light" style={{ margin: '0 auto' }}>
       <div className="card-body">
         <form onSubmit={submit}>
+          <div className="mb-3">
+            <label className="form-label fw-semibold">Bank Name</label>
+            <input
+              type="text"
+              name="bankName"
+              className="form-control"
+              value={form.bankName}
+              onChange={onChange}
+              required
+              placeholder="Enter bank name"
+            />
+          </div>
           <div className="mb-3">
             <label className="form-label fw-semibold">Loan Amount</label>
             <input
