@@ -6,7 +6,7 @@ const QueryList = () => {
   const [queries, setQueries] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/queries')
+    axios.get('${process.env.REACT_APP_API_URL}/api/queries')
       .then(res => setQueries(res.data))
       .catch(() => setQueries([]));
   }, []);
