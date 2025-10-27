@@ -25,7 +25,7 @@ const ProposalForm = ({ user, proposalType }) => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "${process.env.REACT_APP_API_URL}/api/proposals",
+        `${process.env.REACT_APP_API_URL}/api/proposals`,
         {
           ...form,
           type: proposalType, // Set proposal type dynamically
