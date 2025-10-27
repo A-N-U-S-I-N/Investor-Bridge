@@ -5,7 +5,7 @@ const InformationList = () => {
   const [infos, setInfos] = useState([]);
 
   useEffect(() => {
-    axios.get('${process.env.REACT_APP_API_URL}/api/advisor-info')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/advisor-info`)
       .then(res => setInfos(res.data))
       .catch(() => setInfos([]));
   }, []);
