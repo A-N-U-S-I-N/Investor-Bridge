@@ -22,37 +22,6 @@ This MERN stack application bridges the gap between investors and businesses see
 - Authentication: JWT
 - Deployment: TBD
 
-## Setup
-
-1. Clone the repository:
-`git clone <repo-url>`
-`cd <repo-folder>`
-
-2. Backend:
-- Install dependencies:
-  ```
-  npm install
-  ```
-- Setup `.env` file with your environment variables (MongoDB URI, JWT secret)
-- Run backend server:
-  ```
-  npm start
-  ```
-
-3. Frontend:
-- Navigate to client folder:
-  ```
-  cd client
-  ```
-- Install dependencies:
-  ```
-  npm install
-  ```
-- Start React development server:
-  ```
-  npm start
-  ```
-
 ## Future Enhancements
 
 - OTP verification and password reset flows
