@@ -9,7 +9,7 @@ const InformationPostForm = ({ user }) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/advisor-info', 
+      await axios.post('${process.env.REACT_APP_API_URL}/api/advisor-info', 
         { infoText: info }, 
         { headers: { 'x-auth-token': token } }
       );
