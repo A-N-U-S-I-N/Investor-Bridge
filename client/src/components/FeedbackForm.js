@@ -11,7 +11,7 @@ const FeedbackForm = () => {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      await axios.post('http://localhost:5000/api/feedback', form);
+      await axios.post('${process.env.REACT_APP_API_URL}/api/feedback', form);
       setStatus('Thank you for your feedback!');
       setForm({ name: '', email: '', message: '' });
     } catch {
