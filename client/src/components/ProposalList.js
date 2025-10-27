@@ -6,7 +6,7 @@ const ProposalList = ({ proposalType, onSelectedProject }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/proposals?type=${proposalType}`)
+      .get(`${process.env.REACT_APP_API_URL}/api/proposals?type=${proposalType}`)
       .then((res) => setProposals(res.data))
       .catch(() => setProposals([]));
   }, [proposalType]);
