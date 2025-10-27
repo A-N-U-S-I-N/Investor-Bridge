@@ -13,7 +13,7 @@ const QueryForm = ({ user }) => {
     }
     try {
       const token = localStorage.getItem('token');
-      await axios.post('${process.env.REACT_APP_API_URL}/api/queries', 
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/queries`, 
         { question }, 
         { headers: { 'x-auth-token': token } }
       );
