@@ -8,7 +8,7 @@ const SolutionList = ({ queryId }) => {
 
   useEffect(() => {
     const fetchSolutions = async () => {
-      const res = await axios.get(`http://localhost:5000/api/solutions/${queryId}`);
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/solutions/${queryId}`);
       setSolutions(res.data);
     };
 
