@@ -12,7 +12,7 @@ const ProposalForm = ({ user, proposalType }) => {
 
   useEffect(() => {
     const fetchCategories = async () => {
-      const res = await axios.get("${process.env.REACT_APP_API_URL}/api/categories");
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/categories`);
       setCategories(res.data);
     };
     fetchCategories();
