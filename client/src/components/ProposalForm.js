@@ -12,7 +12,7 @@ const ProposalForm = ({ user, proposalType }) => {
 
   useEffect(() => {
     const fetchCategories = async () => {
-      const res = await axios.get("http://localhost:5000/api/categories");
+      const res = await axios.get("${process.env.REACT_APP_API_URL}/api/categories");
       setCategories(res.data);
     };
     fetchCategories();
@@ -25,7 +25,7 @@ const ProposalForm = ({ user, proposalType }) => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:5000/api/proposals",
+        "${process.env.REACT_APP_API_URL}/api/proposals",
         {
           ...form,
           type: proposalType, // Set proposal type dynamically
