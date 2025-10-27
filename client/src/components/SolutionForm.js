@@ -13,7 +13,7 @@ const SolutionForm = ({ queryId, user }) => {
     }
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/solutions', 
+      await axios.post('${process.env.REACT_APP_API_URL}/api/solutions', 
         { solutionText, query: queryId }, 
         { headers: { 'x-auth-token': token } }
       );
