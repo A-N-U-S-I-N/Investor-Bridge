@@ -7,7 +7,7 @@ const LoanList = () => {
   useEffect(() => {
     const fetchLoans = async () => {
       try {
-        const res = await axios.get('${process.env.REACT_APP_API_URL}/api/loans');
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/loans`);
         setLoans(res.data);
       } catch {
         setLoans([]);
