@@ -19,7 +19,7 @@ const LoanDetailsForm = ({ user }) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await axios.post('${process.env.REACT_APP_API_URL}/api/loans', {
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/loans`, {
         ...form,
         title: `Loan for ${user.name}`,
         description: form.description,
