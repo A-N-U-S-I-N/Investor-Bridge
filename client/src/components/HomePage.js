@@ -54,7 +54,8 @@ const HomePage = () => {
 
 const Footer = () => (
   <footer className="bg-primary text-white text-center py-3 mt-5">
-    <small>© 2025 InvestorBridge. All rights reserved.</small>
+    <p>© {new Date().getFullYear()} InvestorBridge. All rights reserved.</p>
+    <p>Developed by <a href="https://anushkacode.vercel.app" className="text-decoration-none text-white link-dark" target="_blank">Anushka Singh</a></p>
   </footer>
 );
 
